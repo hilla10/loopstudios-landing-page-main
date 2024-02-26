@@ -1,0 +1,131 @@
+.header {
+    background: url('../images/desktop/image-hero.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: rem(650);
+
+    margin-bottom: rem(161);
+
+    @include breakpointDown(tablet) {
+        margin-bottom: rem(80);
+
+        .container {
+            margin: 0 rem(50);
+        }
+    }
+
+    .logo {
+
+        @include breakpointDown(mobile) {
+            position: relative;
+            z-index: 15;
+
+            img {
+                width: rem(150);
+            }
+        }
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: rem(63) 0;
+        margin-bottom: rem(63);
+        width: 100%;
+
+        ul {
+            display: flex;
+            gap: rem(29);
+
+            a {
+                position: relative;
+                color: $white;
+                padding-bottom: 10px;
+                text-align: center;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 60%;
+                    height: 2px;
+                    margin: auto;
+                    transition: background .6s ease-in-out;
+
+                }
+
+                &:hover::before {
+                    background: $white;
+                }
+            }
+        }
+    }
+
+    .hero {
+        border: 2px solid $white;
+        padding: rem(40);
+        padding-bottom: rem(23);
+        max-width: 58.6%;
+
+        @include breakpointDown(tablet) {
+            max-width: 90%;
+            margin: auto;
+            padding: rem(20);
+        }
+
+        h1 {
+            font-size: rem(70);
+            text-transform: uppercase;
+            color: $white;
+            letter-spacing: -.4px;
+
+            @include breakpointDown(mobile) {
+                font-size: rem(28);
+                width: 100%;
+
+            }
+        }
+    }
+
+    // mobile 
+    .col-right {
+        @include breakpointDown(mobile) {
+            position: fixed;
+            z-index: 3;
+            top: 0;
+            right: 0;
+            background: $black;
+            width: 100%;
+            height: 100%;
+            transform: translateX(200vh);
+            transition: transform 0.6s ease-in-out;
+
+            ul {
+                display: block;
+                gap: 0;
+                margin: rem(200) rem(50);
+
+                li {
+                    padding: rem(15) 0;
+
+                    a {
+                        font-size: rem(22);
+                        text-transform: uppercase;
+                        font-family: $headingFont;
+                        color: $darkGray;
+                    }
+                }
+            }
+
+        }
+
+        &.active {
+            transform: translateX(0);
+        }
+    }
+}

@@ -1,0 +1,137 @@
+.main {
+    margin-bottom: rem(100);
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: flex-end;
+        margin-bottom: rem(178);
+
+        @include breakpointDown(tablet) {
+            grid-template-columns: 1fr;
+            margin-bottom: rem(80);
+            .interactive {
+                width: 86%;
+                margin: auto;
+                margin-bottom: rem(60);
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        img {
+            height: rem(500);
+            object-fit: cover;
+
+            @include breakpointDown(desktop) {
+                height: auto;
+            }
+
+            @include breakpointDown(tablet) {
+                height: auto;
+                margin: auto;
+            }
+        }
+
+        &__item {
+            background: $white;
+            transform: translateX(rem(-160));
+            padding-left: rem(96);
+            padding-top: rem(94);
+            width: rem(545);
+
+            @include breakpointDown(desktop) {
+                width: rem(480);
+                padding-left: rem(50);
+                transform: translateX(rem(-190));
+            }
+
+            @include breakpointDown(tablet) {
+                transform: translateX(0);
+                width: 90%;
+                text-align: center;
+                padding: 0;
+                margin: auto;
+            }
+
+            h2 {
+                margin-bottom: rem(30);
+            }
+
+            p {
+                padding-bottom: 4px;
+            }
+        }
+    }
+
+    .creations {
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: rem(81);
+
+            @include breakpointDown(mobile) {
+                flex-direction: column;
+            }
+
+        }
+
+        .grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            width: 100%;
+
+            @include breakpointDown(desktop) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @include breakpointDown(tablet) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include breakpointDown(mobile) {
+                grid-template-columns: 1fr;
+                width: auto;
+            }
+
+            img {
+                width: 100%;
+                height: rem(450);
+                object-fit: cover;
+
+                @include breakpointDown(tablet) {
+                    height: rem(250);
+                }
+            }
+
+            .col-3 {
+                position: relative;
+
+                h3 {
+                    position: absolute;
+                    bottom: rem(26);
+                    color: $white;
+                    font-size: rem(32);
+                    padding: 0 rem(40);
+                    letter-spacing: -0.8px;
+
+                    span {
+                        margin-top: -6px;
+                        display: block;
+
+                        &:nth-child(2) {
+                            padding-bottom: 5px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+}

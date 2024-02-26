@@ -1,0 +1,89 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $bodyFont;
+    background: $white;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: rem(1112);
+    margin: auto;
+
+    @include breakpointDown(desktop) {
+        max-width: 95%;
+        margin: auto;
+    }
+}
+
+h1,
+h2,
+h3,
+.btn {
+    font-family: $headingFont;
+    text-transform: uppercase;
+    color: $black;
+}
+
+h2 {
+    font-size: rem(46);
+
+    @include breakpointDown(mobile) {
+        font-size: rem(32);
+    }
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: $darkGray;
+
+}
+
+.btn {
+    display: inline-block;
+    padding: rem(10) rem(40);
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: rem(17);
+    letter-spacing: 1px;
+    background: none;
+    cursor: pointer;
+    margin-top: 6px;
+    margin-right: -4px;
+}
+
+.btn__outline {
+    border: 2px solid $black;
+}
+
+.btn_hidden-lg {
+    width: rem(220);
+    margin: auto;
+
+    @include breakpointUp(mobile) {
+
+        display: none;
+    }
+}
+
+@include breakpointDown(mobile) {
+
+    .btn_hidden-sm {
+        display: none;
+    }
+}
